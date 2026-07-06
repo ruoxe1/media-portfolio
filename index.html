@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="覃勇波的数字媒体作品集，展示短视频剪辑、AIGC 广告创作、校园影像与导播执行经历。"
+    />
+    <title>覃勇波 | 数字媒体作品集</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark">QYB</span>
+        <span>覃勇波</span>
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="#works">作品</a>
+        <a href="#add-work">添加</a>
+        <a href="#experience">经历</a>
+        <a href="#skills">技能</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="kicker">数字媒体技术在读 / 综合传媒实习投递</p>
+          <h1 id="hero-title">能策划、能拍、能剪，也能稳住现场。</h1>
+          <p class="hero-lede">
+            我是覃勇波，南宁师范大学数字媒体技术本科在读。关注短视频内容、AIGC
+            广告创作、校园活动影像与现场导播保障，希望在新媒体、视频内容或品牌传播岗位继续实践。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#works">查看作品</a>
+            <a class="button button-secondary" href="mailto:3366297864@qq.com">发送邮件</a>
+          </div>
+          <dl class="quick-stats" aria-label="核心信息">
+            <div>
+              <dt>3</dt>
+              <dd>支可播放作品</dd>
+            </div>
+            <div>
+              <dt>AIGC</dt>
+              <dd>广告创意与视频生成</dd>
+            </div>
+            <div>
+              <dt>现场</dt>
+              <dd>导播与设备保障经验</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-reel" aria-label="精选视频预览">
+          <div class="reel-frame">
+            <video
+              src="./assets/videos/sanfu-ad.mp4"
+              muted
+              playsinline
+              loop
+              preload="metadata"
+              aria-label="三福广告作品预览"
+            ></video>
+            <button class="reel-toggle" type="button" data-video-toggle>
+              播放精选
+            </button>
+          </div>
+          <div class="reel-caption">
+            <span>Featured cut</span>
+            <strong>三福广告《潮这儿看，够有趣》</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section workbench" id="works" aria-labelledby="works-title">
+        <div class="section-heading">
+          <p class="kicker">Selected works</p>
+          <h2 id="works-title">作品直接点开看</h2>
+          <p>
+            以短视频成片为主，覆盖 AIGC 广告、内容包装和剧情/游戏向剪辑。每个作品都标出我的职责，方便快速判断能力匹配度。
+          </p>
+        </div>
+
+        <div class="filter-bar" role="list" aria-label="作品分类筛选">
+          <button class="chip active" type="button" data-filter="all">全部</button>
+          <button class="chip" type="button" data-filter="aigc">AIGC 广告</button>
+          <button class="chip" type="button" data-filter="edit">剪辑包装</button>
+          <button class="chip" type="button" data-filter="story">剧情表达</button>
+          <button class="chip" type="button" data-filter="custom">新增作品</button>
+        </div>
+
+        <div class="works-grid" id="works-grid" aria-live="polite"></div>
+
+        <div class="add-work-panel" id="add-work">
+          <div class="add-work-copy">
+            <p class="kicker">Add a work</p>
+            <h3>临时添加新的作品</h3>
+            <p>
+              适合投递前快速补充作品。选择视频文件后会保存在当前浏览器里，不会上传到任何地方；如果换电脑或清理浏览器数据，需要重新添加。
+            </p>
+          </div>
+          <form class="work-form" id="work-form">
+            <label>
+              <span>作品标题</span>
+              <input name="title" type="text" placeholder="例如：校园活动宣传片" required />
+            </label>
+            <label>
+              <span>作品类型</span>
+              <input name="type" type="text" placeholder="例如：活动纪实 / 商业广告 / 剪辑包装" required />
+            </label>
+            <label>
+              <span>分类</span>
+              <select name="category">
+                <option value="edit">剪辑包装</option>
+                <option value="aigc">AIGC 广告</option>
+                <option value="story">剧情表达</option>
+                <option value="custom">新增作品</option>
+              </select>
+            </label>
+            <label>
+              <span>时长</span>
+              <input name="duration" type="text" placeholder="例如：01:12" />
+            </label>
+            <label class="full-field">
+              <span>选择视频</span>
+              <input name="video" type="file" accept="video/*" required />
+            </label>
+            <label class="full-field">
+              <span>一句话简介</span>
+              <textarea
+                name="summary"
+                rows="3"
+                placeholder="说清楚这个作品是什么、解决了什么表达目标。"
+                required
+              ></textarea>
+            </label>
+            <label class="full-field">
+              <span>你的职责</span>
+              <textarea
+                name="roles"
+                rows="3"
+                placeholder="每行一条，例如：素材筛选与粗剪"
+                required
+              ></textarea>
+            </label>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">保存作品</button>
+              <button class="button button-secondary" type="reset">清空</button>
+            </div>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section timeline-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading compact">
+          <p class="kicker">Experience</p>
+          <h2 id="experience-title">经历围绕“内容生产现场”展开</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <span class="timeline-date">2023.9 - 2027.6</span>
+            <h3>南宁师范大学 / 数字媒体技术</h3>
+            <p>
+              主修数字媒体技术基础、视频剪辑与后期制作、新媒体内容创作、多媒体技术应用、AI 基础应用等课程。
+            </p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">AIGC 项目</span>
+            <h3>三福广告《潮这儿看，够有趣》</h3>
+            <p>
+              参与广告创意策划、脚本文案、画面风格规划，使用可灵 AI 完成镜头生成，并通过多轮筛选、剪映包装与配乐优化完成成片。
+            </p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">2023.07 - 2024.09</span>
+            <h3>校园活动影像拍摄与剪辑实践</h3>
+            <p>
+              参与校园活动、班级活动和宣传场景的照片及视频拍摄，完成素材筛选、粗剪、节奏调整、字幕转场和基础调色。
+            </p>
+          </article>
+          <article class="timeline-item">
+            <span class="timeline-date">2024</span>
+            <h3>师范生技能大赛导播与技术保障</h3>
+            <p>
+              配合现场多机位切换、赛程节点跟进、画面输出、设备调试和网络保障，处理投屏、声音与信号连接问题。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section skill-section" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading compact">
+          <p class="kicker">Toolbox</p>
+          <h2 id="skills-title">能上手的工具与能力</h2>
+        </div>
+        <div class="skill-cloud" aria-label="技能标签">
+          <span>AE</span>
+          <span>PR</span>
+          <span>剪映</span>
+          <span>达芬奇</span>
+          <span>AIGC 视频</span>
+          <span>文案策划</span>
+          <span>分镜构思</span>
+          <span>短视频剪辑</span>
+          <span>字幕转场</span>
+          <span>基础调色</span>
+          <span>活动拍摄</span>
+          <span>现场导播</span>
+          <span>设备调试</span>
+          <span>网络排障</span>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2 id="contact-title">欢迎联系我聊实习机会</h2>
+          <p>
+            如果需要更完整的项目说明、源文件或电话联系方式，我可以随简历一起补充。
+          </p>
+        </div>
+        <div class="contact-card">
+          <a href="mailto:3366297864@qq.com">3366297864@qq.com</a>
+          <span>电话：简历内可见</span>
+          <span>方向：新媒体 / 视频剪辑 / AIGC 内容创作</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>覃勇波 · 数字媒体作品集</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
