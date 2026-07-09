@@ -32,6 +32,17 @@ const defaultWorks = [
       "偏剧情/游戏向的短片表达，重点呈现内容节奏、标题感和观看记忆点。",
     roles: ["内容结构整理", "剪辑节奏与氛围营造", "成片输出与传播场景适配"],
   },
+  {
+    id: "vlog",
+    title: "Vlog 影像作品",
+    type: "生活记录",
+    duration: "01:02",
+    category: "edit",
+    video: "./assets/videos/vlog.mp4",
+    summary:
+      "以日常观察和移动拍摄为基础，展示生活化镜头组织、节奏控制和短视频叙事能力。",
+    roles: ["拍摄素材整理与筛选", "Vlog 节奏剪辑与画面串联", "音乐、字幕和成片输出适配"],
+  },
 ];
 
 const worksGrid = document.querySelector("#works-grid");
@@ -130,7 +141,7 @@ function renderWorks(filter = "all") {
       (work) => `
         <article class="work-card" data-category="${escapeHtml(work.category)}">
           <div class="work-media">
-            <video src="${escapeHtml(work.video)}" controls preload="metadata" playsinline aria-label="${escapeHtml(work.title)}"></video>
+            <video src="${escapeHtml(work.video)}" controls preload="none" playsinline aria-label="${escapeHtml(work.title)}"></video>
           </div>
           <div class="work-body">
             <div class="work-meta">
